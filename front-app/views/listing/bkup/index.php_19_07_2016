@@ -1,0 +1,49 @@
+<div class="popupLoader" id="listLoading"><img src="<?php echo FRONT_IMAGE_PATH;  ?>bx_loader.gif" /></div>
+<div class="listingContent globalClr">
+		<?php if($cityname != '' && $province != ''){ ?>
+		<span class="lsitingTitle globalClr">Hostels in <?php echo $cityname.', '.$province.', Australia'; ?></span>
+		<?php } else if($cityname == '' && $province != '') { ?>
+		<span class="lsitingTitle globalClr">Hostels in <?php echo $province.', Australia'; ?></span>
+		<?php } else if($cityname == '' && $province == '') { ?>
+		<span class="lsitingTitle globalClr">Hostels in <?php echo 'Australia'; ?></span>
+		<?php } ?>
+		
+                <div class="lsitResult"><strong><span id="totalCount"><?php echo ($totalCount>0?$totalCount:0);?></span> Results: </strong> <?php echo ($checkin_date!=''?$checkin_date.' - ':'');  echo ($checkout_date!=''?$checkout_date:'');?> </div>
+                <div class="listingView">
+                  <ul class="clearfix">
+                    <li class="active"><a href="#">View grid</a></li>
+                    <li><a href="<?php echo FRONTEND_URL;?>maplist/<?php echo $map_url;?>">Map View</a></li>
+                    <!--<li><span>Hostel Reviews</span></li>-->
+                  </ul>
+                </div>
+                <div class="listingSort globalClr clearfix">
+                  <div class="ltCls sortSelect">
+                    <label class="labelName">Sort By: </label>
+                    <label class="stylishSelect">
+                      <select name="sortby" id="sortby">
+                        <option selected="selected" value="name-az">Name (A-Z)</option>
+			<option value="name-za">Name (Z-A)</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to low</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="ltCls pageSelect">
+                    <label class="labelName">per page:</label>
+                    <label class="stylishSelect">
+                      <select name="perpage" id="perpage">
+                        <!--<option value="4">4</option>
+			<option value="10">10</option>
+			<option selected="selected" value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>-->
+			<option value="all">All</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+		<input type="hidden" name="page" id="page" value="1">
+                <div class="listingItems globalClr clearfix gridView" id="filterpropertydata"></div>
+		<div class="pagiWrapper"></div>
+              </div>
+

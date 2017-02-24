@@ -1,0 +1,1 @@
+<img src="<?php echo $landing_banner_tab;?>"  alt="<?php echo $type_name;?>"/>

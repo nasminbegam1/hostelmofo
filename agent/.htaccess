@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /hostelmofo/agent/
+
+RewriteCond $1 !^(index\.php|img|css|js|upload|vendors|metronic_v3.6.1|html)
+RewriteRule ^(.*)$ /hostelmofo/agent/index.php?/$1 [L]

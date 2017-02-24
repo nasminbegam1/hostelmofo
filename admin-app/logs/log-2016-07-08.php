@@ -1,0 +1,88 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2016-07-08 13:45:50 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:45:53 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:45:53 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:45:54 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:45:58 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:45:58 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:46:01 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:46:01 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:46:04 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:46:04 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:46:04 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:46:53 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:46:53 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:46:55 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:46:55 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:46:55 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:49:56 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:49:56 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:49:59 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:49:59 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:50:06 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:50:06 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:50:06 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:50:23 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:50:23 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:50:23 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:50:43 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:50:43 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:50:43 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:52:34 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:52:34 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:52:40 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:52:40 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:53:56 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:53:56 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:54:03 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:54:03 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:54:07 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:54:07 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:54:18 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:54:18 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:54:33 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:54:33 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:54:46 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:54:46 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:54:48 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:54:48 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:55:04 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:55:04 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:55:04 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:55:11 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:55:11 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:55:11 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:56:47 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:56:47 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:56:47 --> Severity: Notice  --> Undefined offset: 10 /var/www/html/hostelworld/admin-app/views/property/list.php 187
+ERROR - 2016-07-08 13:56:47 --> Severity: Notice  --> Undefined offset: 10 /var/www/html/hostelworld/admin-app/views/property/list.php 187
+ERROR - 2016-07-08 13:56:47 --> Severity: Notice  --> Undefined offset: 10 /var/www/html/hostelworld/admin-app/views/property/list.php 187
+ERROR - 2016-07-08 13:57:00 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:57:00 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:57:08 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:57:08 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:57:10 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:57:10 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:57:15 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:57:15 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:57:21 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:57:21 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:57:21 --> Severity: Notice  --> Undefined variable: language_list /var/www/html/hostelworld/admin-app/views/property/edit_contact.php 418
+ERROR - 2016-07-08 13:57:22 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:57:25 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:57:37 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:57:37 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:57:37 --> Severity: Notice  --> Undefined index: roomtype_name /var/www/html/hostelworld/admin-app/views/property/editprice_details.php 179
+ERROR - 2016-07-08 13:57:37 --> Severity: Notice  --> Undefined index: roomtype_name /var/www/html/hostelworld/admin-app/views/property/editprice_details.php 179
+ERROR - 2016-07-08 13:57:47 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:57:47 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:57:52 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:57:52 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:57:52 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:57:57 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:57:57 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:58:05 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-07-08 13:58:05 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /var/www/html/hostelworld/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-08 13:58:05 --> Severity: Notice  --> Undefined index: roomtype_name /var/www/html/hostelworld/admin-app/views/property/editprice_details.php 179
+ERROR - 2016-07-08 13:58:05 --> Severity: Notice  --> Undefined index: roomtype_name /var/www/html/hostelworld/admin-app/views/property/editprice_details.php 179

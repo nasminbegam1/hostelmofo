@@ -1,0 +1,364 @@
+<? if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+<div id="main_content_outer" class="clearfix">
+<link href="<?php echo BACKEND_CSS_PATH;?>uploadfile.css" rel="stylesheet" type="text/css" />
+
+<link href="<?php echo BACKEND_JS_PATH;?>lib/bootstrap-switch/stylesheets/bootstrap-switch.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo BACKEND_JS_PATH;?>lib/bootstrap-switch/stylesheets/ebro_bootstrapSwitch.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="<?php echo BACKEND_JS_PATH; ?>jquery.uploadfile.js"></script>
+
+<script src="<?php echo BACKEND_JS_PATH; ?>lib/iCheck/jquery.icheck.min.js"></script>
+<link rel="stylesheet" href="<?php echo BACKEND_CSS_PATH;?>todc-bootstrap.min.css">
+
+
+
+
+<div id="main_content">                    
+    <!-- Start : main content loads from here -->    
+    	<?php if(isset($succmsg) && $succmsg != ""){?>
+            <div align="center">
+                <div class="nNote nSuccess" style="width: 600px;">
+                    <p><?php echo stripslashes($succmsg);?></p>
+                </div>
+            </div>
+	<?php } ?>
+	<?php if(validation_errors() != FALSE || $errmsg){?>
+            <div align="center">
+                <div class="nNote nFailure" style="width: 600px;">
+                    <?php echo validation_errors('<p>', '</p>'); ?>
+		   <p><?php echo stripslashes($errmsg);?></p>
+                </div>
+            </div>
+	<?php }
+	//pr($arr_property_rent);
+	?>
+        
+    	<div class="row">
+			<div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Edit Property</h4>
+                    </div>
+                    <div class="panel-body">
+            <div class="row">
+            	<div class="col-sm-12">
+                    <?php
+		    $page = $this->uri->segment(4,0);
+		    $property_id  = $this->uri->segment(3,0);
+		    ?>
+                    <ul class="property_tab">
+                         <ul class="property_tab">
+                        <li ><a class="no-cache-redirect" id="property_information_div" href="<?php echo BACKEND_URL;?>rentals/edit_property/<?php echo $property_id.'/'. $page;?>/" class="property_menu ">Rental Property Details</a></li>
+                        <li><a class="no-cache-redirect" href="<?php echo BACKEND_URL;?>rentals/season_prices/<?php echo $property_id.'/'. $page;?>">Rental Prices</a></li>
+                        
+                        <li><a class="no-cache-redirect" href="<?php echo BACKEND_URL;?>rentals/edit_property_image/<?php echo $property_id.'/'. $page;?>">Property Images</a></li>
+			<li><a class="no-cache-redirect"  href="<?php echo BACKEND_URL;?>rentals/contact/<?php echo $property_id.'/'. $page;?>/">Contact</a></li>
+			<li class="active " ><a class="no-cache-redirect"  href="<?php echo BACKEND_URL;?>rentals/ical_import/<?php echo $property_id.'/'. $page;?>/">iCal Import</a></li>
+			<li><a class="no-cache-redirect"  href="<?php echo BACKEND_URL;?>rentals/payment/<?php echo $property_id.'/'. $page;?>/">Booking</a></li>
+			<li><a class="no-cache-redirect"  href="<?php echo BACKEND_URL;?>rentals/edit_map_location/<?php echo $property_id.'/'. $page;?>">Map Location</a></li>
+		    </ul>
+			
+		    </ul>
+                    <div class="clear"></div>
+			    
+                    		<div id="property_information_fieldset" class="property_tag_class">
+				
+				<div style="display:none;" class="loader fk-loader ical-loader "><img src="<?php echo BACKEND_IMAGE_PATH.'ajax_loader_gray_64.gif'; ?>" alt=""></div>
+				
+				
+				<fieldset>
+                                <div class="row basic_info">
+                                    <div class="col-sm-12">
+					
+					<div class="section-one panel panel-default panelOne" >
+					     <div class="panel-heading">
+						 <h2 class="panel-title"><strong>Property Manage	</strong> </h2>
+					    </div>
+					     
+					     <div class="col-sm-6 checkBox">
+						    <label for="property_name" >Property manage by
+							<span class="label label-info  hint--right hint--info" data-hint="Select where from manage your property"><strong>?</strong></span>
+						    </label>
+						    
+						    <input type="radio" name="syn" value="kigo_api" class="form-control radion_frm_class" />
+						    <span  class="radio_lebel">KIGO API</span>
+						    
+						    <input type="radio" name="syn" value="KA" class="form-control manage_by radion_frm_class" />
+						    <span  class="radio_lebel">KIGO </span>
+						    
+						    <input type="radio" name="syn" value="FK" class="form-control manage_by radion_frm_class" />
+						    <span  class="radio_lebel">FlipKey </span>
+						    
+						     <input type="radio" name="syn" value="AR" class="form-control manage_by radion_frm_class"/>
+						    <span  class="radio_lebel">AirBnb </span>
+						    
+						      <input type="radio" name="syn" value="NA" class="form-control manage_by radion_frm_class" />
+						    <span  class="radio_lebel">NOT</span>
+						    
+						   
+					    </div>
+					     <br class="spacer" />
+					    <div class="col-sm-12 ">
+						<div class="col-sm-6">
+						    <label for="property_name" >KIGO ID 
+							<span class="label label-info  hint--right hint--info" data-hint="Enter your KIGO ID of property"><strong>?</strong></span>
+						    </label>
+						    <input type="text"  name="kigoid" value=""  class="ka-id form-control ">
+						</div>
+					    </div>
+					    <br class="spacer" />
+					    
+					     <div class="save_div_class in_panel">
+						<input type="hidden" name="action" value="Process"/>
+						<button class="btn btn-default frm_step_next" type="submit" id="btn_property_image_fieldset"  value="import" name="flipkey_import">Save & Synchronize</button>
+					     </div>
+					     
+					</div>
+		    <!--		End property manage by section			-->
+					 <form name="frmPropertyInformation" id="frm1" class="parsley_reg" enctype="multipart/form-data" method="post" action="<?php echo BACKEND_URL;?>rentals/ical_import/<?php echo $property_id.'/'. $page;?>/" >
+					 <input type="hidden" value="FK" name="syn"/>
+					<div class="section-one panel panel-default panelOne" >
+					    <div class="panel-heading">
+						 <h2 class="panel-title"><strong>Import From FliKey</strong> </h2>
+					    </div>
+					      <br class="spacer" />
+					      
+					    <div class="col-sm-6 checkBox">
+						<label for="property_name" >FlipKey Synchronize
+						    <span class="label label-info  hint--right hint--info" data-hint="Select Enable to Import or Select Disable  and click on save button to delete old flipkey calendar"><strong>?</strong></span>
+						</label>
+						<input type="radio" name="status" class="form-control radion_frm_class" value="E" id="flip-enable"   <?php if($fk_record_exist!= ''){echo 'checked';} ?>>
+						<span class="radio_lebel">Enable</span>
+						<input type="radio"  name="status" id="flip-disable"  class="form-control radion_frm_class" value="D"  <?php if($fk_record_exist==''){echo 'checked';} ?>>
+						<span class="radio_lebel">Disable</span>
+					    </div>
+					     <br class="spacer" />
+					    
+					    
+						<div class="col-sm-6">
+						    <label for="property_name" >Select iCal File
+							<span class="label label-info  hint--right hint--info" data-hint="Upload a .ics file"><strong>?</strong></span>
+						    </label>
+						    <input type="file" class="flip-syn" name="icalfile" value="upload">
+						</div>
+						<br class="spacer" />
+						<div class="col-sm-6">
+						    <label for="property_name" >Or Paste iCal URL 
+							<span class="label label-info  hint--right hint--info" data-hint="Paste your ical url"><strong>?</strong></span>
+						    </label>
+						    <input type="url"  name="icalurl" value="<?=$fk_ical_url; ?>"  class="flip-syn  fk-icalurl form-control ">
+						</div>
+						
+					    <div class="save_div_class in_panel">
+					    <input type="hidden" name="action" value="Process"/>
+					    <button class="btn btn-default frm_step_next" type="submit" id="btn_property_image_fieldset" value="import" name="flipkey_import">Save & Synchronize</button>
+					    </div>
+					   <br class="spacer" /><br class="spacer" />
+					</div> <!-- Section One -->
+					</form>
+					
+					 <form name="frmPropertyInformation" id="frm2" class="parsley_reg" enctype="multipart/form-data" method="post" action="<?php echo BACKEND_URL;?>rentals/ical_import/<?php echo $property_id.'/'. $page;?>/">
+					 <input type="hidden" value="AR" name="syn"/>
+					 
+					<br class="spacer">
+					<div class="section-two panel panel-default panelTwo" >
+					    <div class="panel-heading">
+						 <h2 class="panel-title"><strong>Import from Airbnb</strong> </h4>
+					    </div>
+					    
+					    <div class="col-sm-6 checkBox">
+						<label for="property_name" >Airbnb Synchronize
+						    <span class="label label-info  hint--right hint--info" data-hint="Select Enable to Import or Select Disable and click on save button to delete old flipkey calendar"><strong>?</strong></span>
+						</label>
+						<input type="radio" name="status" class="form-control radion_frm_class" value="E" id="airbnb-enable"  <?php if($ar_record_exist != ''){echo 'checked';} ?>>
+						<span class="radio_lebel">Enable</span>
+						<input type="radio"  name="status" id="airbnb-disable"  class="form-control radion_frm_class" value="D"   <?php if($ar_record_exist==''){echo 'checked';} ?> >
+						<span class="radio_lebel">Disable</span>
+					    </div>
+					     <br class="spacer" />
+					     
+					     <div class="col-sm-6">
+						<label for="property_name" >Select iCal File
+						    <span class="label label-info  hint--right hint--info" data-hint="Upload a .ics file"><strong>?</strong></span>
+						</label>
+						<input type="file" class="airbnb-syn" name="icalfile" value="upload">
+					    </div>
+					    <br class="spacer" />
+					    <div class="col-sm-6">
+						<label for="property_name" >Or Paste iCal URL 
+						    <span class="label label-info  hint--right hint--info" data-hint="Paste your ical url"><strong>?</strong></span>
+						</label>
+						<input type="url"  name="icalurl" value="<?=$ar_ical_url?>"  class="airbnb-syn ar-icalurl	form-control ">
+					    </div>
+					    
+					     <br class="spacer" /> 
+					    <div class="save_div_class in_panel">
+					    <input type="hidden" name="action" value="Process"/>
+					    <button class="btn btn-default frm_step_next" type="submit" id="btn_property_image_fieldset"  value="import" name="flipkey_import">Save & Synchronize</button>
+					     </div>
+					     <br class="spacer" /> 
+					     <br class="spacer" />
+						
+					</div>
+                                        </form>
+					
+				    <!--	 End Airbnb & start KIGO	-->
+				    
+					<form name="frmPropertyInformation" id="frm3" class="parsley_reg" enctype="multipart/form-data" method="post" action="<?php echo BACKEND_URL;?>rentals/ical_import/<?php echo $property_id.'/'. $page;?>/">
+					 <input type="hidden" value="K" name="syn"/>
+					 
+					<br class="spacer">
+					<div class="section-two panel panel-default panelThree" >
+					    <div class="panel-heading">
+						 <h2 class="panel-title"><strong>Import from KIGO</strong> </h4>
+					    </div>
+					    
+					    <div class="col-sm-6 checkBox">
+						<label for="property_name" >KIGO Synchronize
+						    <span class="label label-info  hint--right hint--info" data-hint="Select Enable to Import or Select Disable and click on save button to delete old KIGO calendar"><strong>?</strong></span>
+						</label>
+						<input type="radio" name="status" class="form-control radion_frm_class" value="E" id="kigo-enable"  <?php if($k_record_exist != ''){echo 'checked';} ?>>
+						<span class="radio_lebel">Enable</span>
+						<input type="radio"  name="status" id="kigo-disable"  class="form-control radion_frm_class" value="D"   <?php if($k_record_exist==''){echo 'checked';} ?> >
+						<span class="radio_lebel">Disable</span>
+					    </div>
+					     <br class="spacer" />
+					     
+					     <div class="col-sm-6">
+						<label for="property_name" >Select iCal File
+						    <span class="label label-info  hint--right hint--info" data-hint="Upload a .ics file"><strong>?</strong></span>
+						</label>
+						<input type="file" class="kigo-syn" name="icalfile" value="upload">
+					    </div>
+					    <br class="spacer" />
+					    <div class="col-sm-6">
+						<label for="property_name" >Or Paste iCal URL 
+						    <span class="label label-info  hint--right hint--info" data-hint="Paste your ical url"><strong>?</strong></span>
+						</label>
+						<input type="url"  name="icalurl" value="<?=$k_ical_url?>"  class="kigo-syn k-icalurl	form-control ">
+					    </div>
+					    
+					     <br class="spacer" /> 
+					    <div class="save_div_class in_panel">
+					    <input type="hidden" name="action" value="Process"/>
+					    <button class="btn btn-default frm_step_next" type="submit" id="btn_property_image_fieldset"  value="import" name="kigo_import">Save & Synchronize</button>
+					     </div>
+					     <br class="spacer" /> 
+					     <br class="spacer" />
+					     
+					     
+					      
+					     
+					     <div class="save_div_class">
+						<input type="hidden" autocomplete='off' name="frontend_url" id="frontend_url" value="<?php echo FRONTEND_URL; ?>" />
+						 <a class="btn btn-default frm_step_next no-cache-redirect" href="<?php echo BACKEND_URL.'rentals/payment/'.$property_id.'/'.$page;  ?>/" > Skip & Continue</a>
+						 <a class="btn btn-default frm_step_next no-cache-redirect" href="<?php echo BACKEND_URL."rentals/contact/".$property_id."/".$page;?>" > < Back</a>
+					    </div>
+					</div>
+                                        </form>
+                                    </div>
+				</div>
+                                
+                                </fieldset>
+				</form>
+				</div>			</div>
+                            
+                            
+			    <input type="hidden" id="backend_url" value="<?php echo BACKEND_URL;?>"  />
+			    <input  type="hidden" id="frontend_url" value="<?php echo FRONTEND_URL;?>"  />
+			    
+			</div>
+                        </div>	
+            		</div>
+                </div>
+            </div>
+        </div>
+    <!--End : Main content-->    
+</div>
+
+<script>
+    var old_fk_iacal_url = "<?=$fk_ical_url; ?>";
+    var old_ar_iacal_url = "<?=$ar_ical_url; ?>";
+    var old_k_iacal_url = "<?=$k_ical_url; ?>";
+ 
+    $(function(){
+     if ($("#flip-disable").is(":checked")) {
+	$(".flip-syn").prop("value","");
+	$(".flip-syn").prop("disabled","disabled");
+     }
+      if ($("#airbnb-disable").is(":checked")) {
+	$(".airbnb-syn").prop("value","");
+	$(".airbnb-syn").prop("disabled","disabled");
+     }
+     if ($("#kigo-disable").is(":checked")) {
+	$(".kigo-syn").prop("value","");
+	$(".kigo-syn").prop("disabled","disabled");
+     }
+     
+    });
+    
+    $("#flip-disable").on('click',function(){
+	$(".flip-syn").prop("value","")
+	$(".flip-syn").prop("disabled","disabled");
+    });
+     $("#flip-enable").on('click',function(){
+	$(".fk-icalurl").val(old_fk_iacal_url);
+	$(".flip-syn").prop("disabled",false);
+	
+    });
+    
+    // airbnb 
+    $("#airbnb-disable").on('click',function(){
+	$(".airbnb-syn").prop("value","")
+	$(".airbnb-syn").prop("disabled","disabled");
+    });
+     $("#airbnb-enable").on('click',function(){
+	$(".ar-icalurl").val(old_ar_iacal_url);
+	$(".airbnb-syn").prop("disabled",false);
+	
+    });
+    
+    // airbnb 
+    $("#kigo-disable").on('click',function(){
+	$(".kigo-syn").prop("value","")
+	$(".kigo-syn").prop("disabled","disabled");
+    });
+     $("#kigo-enable").on('click',function(){ 
+	$(".k-icalurl").val(old_k_iacal_url);
+	$(".kigo-syn").prop("disabled",false);
+	
+    });
+    
+    var fk_record_exist = "<?php echo $fk_record_exist; ?>";
+    var ar_record_exist = "<?php echo $ar_record_exist; ?>";
+    var k_record_exist = "<?php echo $k_record_exist; ?>";
+     
+
+    $(".parsley_reg").submit(function(){
+    	 if ($("#flip-disable").is(":checked") && fk_record_exist != '' ) {
+	   if(confirm("You have select FlipKey Synchronize disable option \nDo you want to delete Flipkey Calender? ")==false){
+	     return false;
+	   }
+	  
+	 }
+		
+	 if ( $("#airbnb-disable").is(":checked") && ar_record_exist != '') {
+	     if( confirm("You have select  Airbnb Synchronize disable option \nDo you want to delete Airbnb Calender? ")==false){
+		 return false; 
+		
+	     }
+	 }
+	if ( $("#kigo-disable").is(":checked") && k_record_exist != '') {
+	     if( confirm("You have select KIGO Synchronize disable option \nDo you want to delete KIGO Calender? ")==false){
+		 return false;				
+	     }
+	 }
+	  $(".loader").show();
+    
+    });
+    
+    //loader
+    $(".loader").hide();
+    
+
+</script>

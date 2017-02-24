@@ -1,0 +1,11 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2016-12-21 14:51:54 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelmofo/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-12-21 14:52:04 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelmofo/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-12-21 14:52:04 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelmofo/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-12-21 16:27:45 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelmofo/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-12-21 16:27:53 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelmofo/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-12-21 16:27:53 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelmofo/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-12-21 16:38:42 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelmofo/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-12-21 16:38:57 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelmofo/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-12-21 16:38:57 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelmofo/system/database/drivers/mysql/mysql_driver.php 93

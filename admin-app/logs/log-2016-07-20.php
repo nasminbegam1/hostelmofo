@@ -1,0 +1,10 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2016-07-20 15:50:15 --> Severity: Warning  --> filemtime(): stat failed for /home/magento3/magento.co.in/html/livepattaya/admin-app/controllers/test1.php /chroot/home/magento3/magento.co.in/html/hostel/hostelmofo/system/database/DB_driver.php 197
+ERROR - 2016-07-20 15:50:31 --> Severity: Warning  --> filemtime(): stat failed for /home/magento3/magento.co.in/html/livepattaya/admin-app/controllers/test1.php /chroot/home/magento3/magento.co.in/html/hostel/hostelmofo/system/database/DB_driver.php 197
+ERROR - 2016-07-20 15:50:31 --> Severity: Warning  --> filemtime(): stat failed for /home/magento3/magento.co.in/html/livepattaya/admin-app/controllers/test1.php /chroot/home/magento3/magento.co.in/html/hostel/hostelmofo/system/database/DB_driver.php 197
+ERROR - 2016-07-20 15:50:46 --> Severity: Warning  --> filemtime(): stat failed for /home/magento3/magento.co.in/html/livepattaya/admin-app/controllers/test1.php /chroot/home/magento3/magento.co.in/html/hostel/hostelmofo/system/database/DB_driver.php 197
+ERROR - 2016-07-20 15:50:46 --> Severity: Warning  --> filemtime(): stat failed for /home/magento3/magento.co.in/html/livepattaya/admin-app/controllers/test1.php /chroot/home/magento3/magento.co.in/html/hostel/hostelmofo/system/database/DB_driver.php 197
+ERROR - 2016-07-20 15:50:48 --> Severity: Notice  --> Use of undefined constant php - assumed 'php' /chroot/home/magento3/magento.co.in/html/hostel/hostelmofo/admin-app/views/layout/leftmenu.php 156
+ERROR - 2016-07-20 15:50:55 --> Severity: Warning  --> filemtime(): stat failed for /home/magento3/magento.co.in/html/livepattaya/admin-app/controllers/test1.php /chroot/home/magento3/magento.co.in/html/hostel/hostelmofo/system/database/DB_driver.php 197
+ERROR - 2016-07-20 15:50:55 --> Severity: Warning  --> filemtime(): stat failed for /home/magento3/magento.co.in/html/livepattaya/admin-app/controllers/test1.php /chroot/home/magento3/magento.co.in/html/hostel/hostelmofo/system/database/DB_driver.php 197

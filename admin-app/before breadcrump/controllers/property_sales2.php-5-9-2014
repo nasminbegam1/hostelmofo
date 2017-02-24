@@ -1,0 +1,441 @@
+<?php
+
+class Property_sales2 extends CI_Controller{
+    
+    var $propertyImageTable		= 'lp_property_image';
+    
+    public function __construct(){
+        parent:: __construct();
+        
+    }
+    
+    public function index()
+    {
+        chk_login();
+        redirect(base_url('property_sales2/property_image'));
+    }
+    
+    /************ Edit Property Image **************************/
+    
+    public function property_image()
+    {
+        chk_login();
+        $this->data='';
+	
+	$property_id			= $this->uri->segment(3, 0);
+	$page				= $this->uri->segment(4, 0);
+	$this->data['page']		= $page;
+	$this->data['property_id']	= $property_id;
+	$this->data['controller']	= "property_sales";
+	
+	// Prepare Data
+	$Condition = " property_id = '".$property_id."'";
+	$this->data['arr_property_image'] = $this->model_basic->getValues_conditions($this->propertyImageTable, '*', '', $Condition,'image_order,property_image_id', 'ASC' );
+	
+	if($this->input->get_post('action') == 'Process')
+	{
+		$total_no_image  	= count($this->input->get_post('image_name'));
+		$arr_image_name  	= $this->input->get_post('image_name');
+		$arr_image_title 	= $this->input->get_post('image_title');
+		$arr_image_alt	 	= $this->input->get_post('image_alt');
+		$arr_image_caption	= $this->input->get_post('image_caption');
+		$arr_image_tag	 	= $this->input->get_post('image_tag');
+		$arr_image_order 	= $this->input->get_post('image_order');
+		$arr_make_featured	= $this->input->get_post('make_featured');
+		//pr($arr_image_order);
+		if($total_no_image > 0 )
+		{
+			/*** Delete existing image ***/
+			if(sizeof($this->data['arr_property_image']) > 0)
+			{ 
+				$Condition 		= "property_id = '".$property_id."'";
+				$arr_property_image	= $this->model_basic->getValues_conditions($this->propertyImageTable, '*', '', $Condition);
+				$delete_where 		= "property_id = '".$property_id."'";
+				$this->model_basic->deleteData($this->propertyImageTable, $delete_where);
+			}
+			$featured_image = 'No';
+			for($i=0;$i<$total_no_image;$i++)
+			{
+			   if( $arr_image_name[$i] != ''){
+				$image_name	= $arr_image_name[$i];
+				$image_title	= $arr_image_title[$i];
+				$image_alt 	= $arr_image_alt[$i];
+				$image_caption	= $arr_image_caption[$i];
+				$image_tag 	= $arr_image_tag[$i];					
+				
+				if($arr_image_order[$i] != '')
+					$image_order 	= $arr_image_order[$i];
+				else
+					$image_order 	= 999;
+				
+				if(is_array($arr_make_featured))
+				{
+					if($arr_make_featured[0] == $image_name)
+					{
+						$featured_image = 'Yes';
+					}
+					else
+					{
+						$featured_image =  'No';
+					}
+				}
+				else
+				{
+					if($i == 0)
+					{
+						$featured_image =  'Yes';
+					}
+					else
+					{
+						$featured_image =  'No';
+					}
+				}
+				
+				/*** insert into property image section ***/
+				$insertPropertyImageArr = array(
+								'property_id' 		=> $property_id,
+								'image_file_name'	=> $image_name,
+								'image_title' 		=> $image_title,
+								'image_alt' 		=> $image_alt,
+								'image_caption' 	=> $image_caption,
+								'image_tag'		=> $image_tag,
+								'image_order'		=> $image_order,
+								'is_featured'		=> $featured_image
+								);
+				
+				$this->model_basic->insertIntoTable($this->propertyImageTable,$insertPropertyImageArr);
+			   }
+			}
+			
+			/*** make featured start ***/
+			//if(isset($arr_make_featured[0]))
+			/*** make featured end ***/
+			
+			$this->nsession->set_userdata('succmsg', 'Property image has been updated');
+		}
+		else
+		{
+			$this->nsession->set_userdata('errmsg', 'There is no image filed to update');  redirect(BACKEND_URL.$this->data['controller']."/edit_property_image/".$property_id."/".$page);
+		}
+		//pr($_REQUEST);
+		redirect(BACKEND_URL.$this->data['controller']."/edit_floorplan_image/".$property_id."/".$page);
+		return false;
+	}
+		
+	$this->data['succmsg'] = $this->nsession->userdata('succmsg');
+	$this->data['errmsg'] = $this->nsession->userdata('errmsg');
+	$this->nsession->set_userdata('succmsg', "");
+	$this->nsession->set_userdata('errmsg', "");
+		
+	
+	
+        $this->templatelayout->get_topbar();
+	$this->templatelayout->get_leftmenu();
+	$this->templatelayout->get_footer();
+	
+        $this->elements['middle']='sales/edit_property_image';			
+        $this->elements_data['middle'] = $this->data;			    
+        $this->layout->setLayout('layout');
+        $this->layout->multiple_view($this->elements,$this->elements_data);
+    }
+    
+    
+    public function floorplan_image()
+    {
+        chk_login();
+        $this->data='';
+	
+	$property_id			= $this->uri->segment(3, 0);
+	$page				= $this->uri->segment(4, 0);
+	$this->data['page']		= $page;
+	$this->data['property_id']	= $property_id;
+	$this->data['controller']	= "property_sales";
+	
+	// Prepare Data
+	$Condition = " property_id = '".$property_id."'";
+	$this->data['arr_property_image'] = $this->model_basic->getValues_conditions($this->propertyImageTable, '*', '', $Condition,'image_order,property_image_id', 'ASC' );
+	
+	if($this->input->get_post('action') == 'Process')
+	{
+		$total_no_image  	= count($this->input->get_post('image_name'));
+		$arr_image_name  	= $this->input->get_post('image_name');
+		$arr_image_title 	= $this->input->get_post('image_title');
+		$arr_image_alt	 	= $this->input->get_post('image_alt');
+		$arr_image_caption	= $this->input->get_post('image_caption');
+		$arr_image_tag	 	= $this->input->get_post('image_tag');
+		$arr_image_order 	= $this->input->get_post('image_order');
+		$arr_make_featured	= $this->input->get_post('make_featured');
+		//pr($arr_image_order);
+		if($total_no_image > 0 )
+		{
+			/*** Delete existing image ***/
+			if(sizeof($this->data['arr_property_image']) > 0)
+			{ 
+				$Condition 		= "property_id = '".$property_id."'";
+				$arr_property_image	= $this->model_basic->getValues_conditions($this->propertyImageTable, '*', '', $Condition);
+				$delete_where 		= "property_id = '".$property_id."'";
+				$this->model_basic->deleteData($this->propertyImageTable, $delete_where);
+			}
+			$featured_image = 'No';
+			for($i=0;$i<$total_no_image;$i++)
+			{
+			   if( $arr_image_name[$i] != ''){
+				$image_name	= $arr_image_name[$i];
+				$image_title	= $arr_image_title[$i];
+				$image_alt 	= $arr_image_alt[$i];
+				$image_caption	= $arr_image_caption[$i];
+				$image_tag 	= $arr_image_tag[$i];					
+				
+				if($arr_image_order[$i] != '')
+					$image_order 	= $arr_image_order[$i];
+				else
+					$image_order 	= 999;
+				
+				if(is_array($arr_make_featured))
+				{
+					if($arr_make_featured[0] == $image_name)
+					{
+						$featured_image = 'Yes';
+					}
+					else
+					{
+						$featured_image =  'No';
+					}
+				}
+				else
+				{
+					if($i == 0)
+					{
+						$featured_image =  'Yes';
+					}
+					else
+					{
+						$featured_image =  'No';
+					}
+				}
+				
+				/*** insert into property image section ***/
+				$insertPropertyImageArr = array(
+								'property_id' 		=> $property_id,
+								'image_file_name'	=> $image_name,
+								'image_title' 		=> $image_title,
+								'image_alt' 		=> $image_alt,
+								'image_caption' 	=> $image_caption,
+								'image_tag'		=> $image_tag,
+								'image_order'		=> $image_order,
+								'is_featured'		=> $featured_image
+								);
+				
+				$this->model_basic->insertIntoTable($this->propertyImageTable,$insertPropertyImageArr);
+			   }
+			}
+			
+			/*** make featured start ***/
+			//if(isset($arr_make_featured[0]))
+			/*** make featured end ***/
+			
+			$this->nsession->set_userdata('succmsg', 'Property image has been updated');
+		}
+		else
+		{
+			$this->nsession->set_userdata('errmsg', 'There is no image filed to update');  redirect(BACKEND_URL.$this->data['controller']."/edit_property_image/".$property_id."/".$page);
+		}
+		//pr($_REQUEST);
+		redirect(BACKEND_URL.$this->data['controller']."/edit_floorplan_image/".$property_id."/".$page);
+		return false;
+	}
+		
+	$this->data['succmsg'] = $this->nsession->userdata('succmsg');
+	$this->data['errmsg'] = $this->nsession->userdata('errmsg');
+	$this->nsession->set_userdata('succmsg', "");
+	$this->nsession->set_userdata('errmsg', "");
+		
+	
+	
+        $this->templatelayout->get_topbar();
+	$this->templatelayout->get_leftmenu();
+	$this->templatelayout->get_footer();
+	
+        $this->elements['middle']='sales/edit_property_image';			
+        $this->elements_data['middle'] = $this->data;			    
+        $this->layout->setLayout('layout');
+        $this->layout->multiple_view($this->elements,$this->elements_data);
+    }
+    
+    public function do_image_upload()
+	{
+		chk_login();
+		$output_dir = FILE_UPLOAD_ABSOLUTE_PATH. "property/";
+		if(isset($_FILES["myfile"]))
+		{
+			
+			$ret = array();
+			$error = $_FILES["myfile"]["error"];
+			{
+				$fileCount = count($_FILES["myfile"]['name']);
+				for($i=0; $i < $fileCount; $i++)
+				{
+					
+					//****************** file name formatting area*************************
+					
+					$file_name = $_FILES["myfile"]["name"][$i];
+					$rest_string_after_dot = strrchr($file_name, '.' );
+					
+					$last_dot_position =  strrpos($file_name,".");
+					 $just_file_name = substr($file_name,0,$last_dot_position);
+										
+					$just_file_ext = substr($rest_string_after_dot,1);//////////////
+					//step 2
+					
+										
+					$random_text = rand();
+					$final_random_text = substr($random_text,0,5);
+					
+					$fileName = $just_file_name."_".$final_random_text.'.'.$just_file_ext;
+					
+					// ****************file name formating area ends**************************
+					//$fileName = rand()."_".$_FILES["myfile"]["name"][$i];
+					//$ret[$fileName]= $output_dir.$fileName; //$ret[$fileName] = $fileName;
+					
+					move_uploaded_file($_FILES["myfile"]["tmp_name"][$i],$output_dir.$fileName);
+					
+					/*** create thumbanil ***/
+					$source_image 	= $output_dir.$fileName;
+					
+					/*** for 591*393 ***/
+					$new_big_image	= $output_dir."big/".$fileName;
+					$big_width		= '591';
+					$big_height		= '393';
+					image_thumbnail($source_image, $new_big_image, $big_width, $big_height);
+					
+					/*** for 116*126 ***/
+					$new_list_image	= $output_dir."list/".$fileName;
+					$list_width	= '150';
+					$list_height	= '140';
+					image_thumbnail($source_image, $new_list_image, $list_width, $list_height, FALSE);
+					
+					/*** for 53*40 ***/
+					$new_small_image	= $output_dir."small/".$fileName;
+					$small_width		= '53';
+					$small_height		= '40';
+					image_thumbnail($source_image, $new_small_image, $small_width, $small_height,FALSE);
+					
+					$ret = $fileName;
+				}
+			}
+			
+			
+			echo json_encode($ret);
+		}
+    }
+    
+    public function add_property_image(){
+	$data = array();
+	
+	if($this->input->post('property_id')!=''){
+	    
+	    $is_featured_exist = $this->model_basic->getValue_condition($this->propertyImageTable, 'is_featured', 'is_featured', 'is_featured = "Yes" AND property_id='.$this->input->post('property_id'));
+	    
+	    $feature = 'No';
+	    if($is_featured_exist == ''){
+		$feature = 'Yes';
+	    }
+	    $image_name = mysql_real_escape_string($this->input->post('image_name'));
+	    $insertPropertyImageArr = array(
+					    'property_id' 	=> mysql_real_escape_string($this->input->post('property_id')),
+					    'image_file_name'	=> $image_name,
+					    'is_featured'	=> $feature
+					    );
+
+	  $insert_id =  $this->model_basic->insertIntoTable($this->propertyImageTable,$insertPropertyImageArr);
+	  
+	  if($insert_id){
+	    $data['val']['property_image_id'] = $insert_id;
+	    $data['val']['image_file_name'] = $image_name;
+	    $data['val']['is_feature'] = $feature;
+	    
+	    echo $newly_added = $this->load->view('sales/addnew_image',$data,true);
+	    
+	  }
+	}
+	
+    }
+    
+    public function update_image_data(){
+	if($this->input->post('property_image_id')!=''){
+	    $image_property_id = mysql_real_escape_string($this->input->post('property_image_id'));
+	    $updateArr = array(
+			       "image_alt" => mysql_real_escape_string($this->input->post('alt')),
+			       "image_caption" => mysql_real_escape_string($this->input->post('caption')),
+			       "image_order" => mysql_real_escape_string($this->input->post('order')),
+			       );
+	    $idArr = array(
+			   'property_image_id' => $image_property_id
+			   );
+	    echo $this->model_basic->updateIntoTable($this->propertyImageTable, $idArr, $updateArr);
+	}
+
+	
+    }
+    
+    public function set_feature_image(){
+	if($this->input->post()){
+	    // set all none
+	    $image_id = $this->input->post('property_image_id');
+	     $property_id = $this->model_basic->getValue_condition($this->propertyImageTable, 'property_id', 'property_id', 'property_image_id='.$image_id);
+	    
+	     $updateArr = array(
+			       "is_featured" => 'No',
+			       );
+	    $idArr = array(
+			   'property_id' => $property_id
+			   
+			   );
+	    $this->model_basic->updateIntoTable($this->propertyImageTable, array( 'property_id' => $property_id ), array( "is_featured" => 'No'));
+	    $this->model_basic->updateIntoTable($this->propertyImageTable, array( 'property_image_id' => $image_id ), array( "is_featured" => 'Yes'));
+	}
+    }
+    
+    public function delete_property_image()
+	{
+		chk_login();
+		
+		$property_image_id	= $this->input->get_post('property_image_id');
+		
+		$Condition 		= " property_image_id = '".$property_image_id."'";
+		$arr_property_image	= $this->model_basic->getValues_conditions($this->propertyImageTable, '*', '', $Condition);
+		$prev_image_name	= $arr_property_image[0]['image_file_name'];
+		
+		if($prev_image_name != '')
+		{
+			/*** Delete Image from Server ***/
+			if(file_exists(file_upload_absolute_path().'property/'.stripslashes($prev_image_name)) && stripslashes($prev_image_name) != "")
+			{
+				unlink(file_upload_absolute_path().'property/'.stripslashes($prev_image_name));
+			}
+			
+			if(file_exists(file_upload_absolute_path().'property/big/'.stripslashes($prev_image_name)) && stripslashes($prev_image_name) != "")
+			{
+				unlink(file_upload_absolute_path().'property/big/'.stripslashes($prev_image_name));
+			}
+			
+			if(file_exists(file_upload_absolute_path().'property/list/'.stripslashes($prev_image_name)) && stripslashes($prev_image_name) != "")
+			{
+				unlink(file_upload_absolute_path().'property/list/'.stripslashes($prev_image_name));
+			}
+			
+			if(file_exists(file_upload_absolute_path().'property/small/'.stripslashes($prev_image_name)) && stripslashes($prev_image_name) != "")
+			{
+				unlink(file_upload_absolute_path().'property/small/'.stripslashes($prev_image_name));
+			}
+		}
+		
+		$delete_where	= "property_image_id = '".$property_image_id."' ";
+		$this->model_basic->deleteData($this->propertyImageTable, $delete_where);
+		return true;
+	}
+	
+	
+    
+}
+?>

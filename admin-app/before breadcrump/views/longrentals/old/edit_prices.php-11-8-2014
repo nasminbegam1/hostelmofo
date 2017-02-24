@@ -1,0 +1,311 @@
+<? if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
+
+<link href="<?php echo BACKEND_CSS_PATH;?>uploadfile.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<?php echo BACKEND_JS_PATH; ?>jquery.uploadfile.js"></script>
+
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.js" ></script>
+<script src="<?php echo BACKEND_JS_PATH; ?>jquery.ui.datepicker.js"></script>
+<script src="<?php echo BACKEND_JS_PATH; ?>jquery-ui.multidatespicker.js"></script>
+
+<div id="main_content">                    
+    <!-- Start : main content loads from here -->    
+    	<?php if(isset($succmsg) && $succmsg != ""){?>
+            <div align="center">
+                <div class="nNote nSuccess" style="width: 600px;">
+                    <p><?php echo stripslashes($succmsg);?></p>
+                </div>
+            </div>
+		<?php } ?>
+		<?php if(validation_errors() != FALSE){?>
+            <div align="center">
+                <div class="nNote nFailure" style="width: 600px;">
+                    <?php echo validation_errors('<p>', '</p>'); ?>
+                </div>
+            </div>
+		<?php } ?>
+        
+    	<div class="row">
+			<div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Edit Property</h4>
+                    </div>
+                    <div class="panel-body">
+            <div class="row">
+            	<div class="col-sm-12">
+                     <?php $page = $this->uri->segment(4,0); ?>
+		    <ul class="property_tab">
+			
+			<li><a class="no-cache-redirect" href="<?php echo BACKEND_URL;?>rentals/edit_property/<?php echo $property_id.'/'.$page;?>/">Rental Property Details</a></li>
+			<li class="active "><a class="" href="javascript:void(0);">Rental Prices</a></li>
+                        <li><a class="no-cache-redirect" href="<?php echo BACKEND_URL;?>rentals/edit_property_image/<?php echo $property_id.'/'.$page;?>/">Property Images</a></li>
+			<li><a class="no-cache-redirect" href="<?php echo BACKEND_URL;?>rentals/contact/<?php echo $property_id.'/'.$page;?>/">Contact</a></li>
+			<li><a class="no-cache-redirect"  href="<?php echo BACKEND_URL;?>rentals/ical_import/<?php echo $property_id.'/'. $page;?>/">iCal Import</a></li>
+			<li><a class="no-cache-redirect"  href="<?php echo BACKEND_URL;?>rentals/payment/<?php echo $property_id.'/'. $page;?>/">Booking</a></li>
+			<li><a class="no-cache-redirect"  href="<?php echo BACKEND_URL;?>rentals/edit_map_location/<?php echo $property_id.'/'. $page;?>/">Map Location</a></li>
+                    </ul>
+                    <div class="clear"></div>
+			    
+                    	<div id="property_rentals_fieldset" class="property_tag_class">
+			    
+			    <form name="frmPropertyRental" id="frm4" enctype="multipart/form-data" method="post" class="parsley_reg" action="<?php echo BACKEND_URL;?>rentals/season_prices/<?php echo $property_id;?>/<?php echo $page;?>">
+			    <input type="hidden" name="action" value="Process">
+				<br class="spacer" />
+				<div class="col-sm-12">
+				    <div class="step_info">
+					<h4>Property Rental Seasons</h4>
+					<p>Provide the Property Rental Seasons Information here and the season prices.</p>
+				    </div> 
+				</div>
+				
+				<br class="spacer" />
+				    <h4 class="proHeadingText">Seasonal Property Rents <span style="float: right;"> <a href="javascript:void(0);" onclick="addMoreSeasons();">Add More Seasons</a> </span></h4>
+				    <table width="100%" id="tableSeasons">
+					<?php
+					if(!empty($season_price_list))
+					    $seaPriceCount = count($season_price_list);
+					else
+					    $seaPriceCount = 0;
+					//pr($season_price_list, 0); echo $seaPriceCount;
+					if($seaPriceCount > 0){
+					    for($p=0;$p<$seaPriceCount;$p++) { ?>
+					    <tr><td>&nbsp;</td></tr>
+					    <tr id="season_<?php echo $season_price_list[$p]['price_id']; ?>">
+					    <td>
+						<div class="col-sm-12">
+						    <legend>
+							<b><?php echo $season_price_list[$p]['season_name'];?></b>
+							<a href="javascript:void(0);" onclick="removeSeason(<?php echo $season_price_list[$p]['price_id']; ?>);" style=" float: right;">Remove Season</a></legend>
+						</div>
+						<div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Season Name</label>
+						  <input value="<?php echo $season_price_list[$p]['season_name'];?>" name="season_name[]" type="text" class="form-controltwo required seasonName" data-required="true" id="sesname_<?php echo $p; ?>">
+						</div>
+						<div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Daily Price</label>
+						  <input value="<?php echo $season_price_list[$p]['daily_price'];?>" name="season_daily[]" type="text" class="form-controltwo required" data-required="true" data-type="number">
+						</div>
+						<div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Weekly Price</label>
+						  <input value="<?php echo $season_price_list[$p]['weekly_price'];?>" name="season_weekly[]" type="text" class="form-controltwo required" data-required="true" data-type="number">
+						</div>
+						<div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Monthly Price</label>
+						  <input value="<?php echo $season_price_list[$p]['monthly_price'];?>" name="season_monthly[]" type="text" class="form-controltwo required" data-required="true" data-type="number">
+						</div>
+						<br class="spacer" />
+						<div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Minimum Rental Days</label>
+						  <input value="<?php echo $season_price_list[$p]['minimum_rental_days'];?>" name="minimum_rental_days[]" type="text" class="form-controltwo required" data-required="true" data-type="number">
+						</div>
+			
+			<div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Season Start Date</label>
+						  <?php if($season_price_list[$p]['season_start_date'] != '' && $season_price_list[$p]['season_start_date'] != '1970-01-01 00:00:00' && $season_price_list[$p]['season_start_date'] !='0000-00-00 00:00:00'){ ?>
+						    <input value="<?php echo date("d/m/Y", strtotime($season_price_list[$p]['season_start_date']));?>" type="text" data-required="true" id="start_date_id<?php echo $season_price_list[$p]['price_id']; ?>"  class="season_start_date form-controltwo required" name="season_start_date[]">
+						  <?php } else { ?>
+						    <input value="" type="text" data-required="true" class="season_start_date form-controltwo required" name="season_start_date[]">
+						  <?php } ?>
+						</div>
+                        <div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Season End Date</label>
+						   <?php if($season_price_list[$p]['season_end_date'] != '' && $season_price_list[$p]['season_end_date'] != '1970-01-01 00:00:00' && $season_price_list[$p]['season_end_date'] !='0000-00-00 00:00:00'){ ?>
+						    <input value="<?php echo date("d/m/Y", strtotime($season_price_list[$p]['season_end_date']));?>" type="text" data-required="true" id="start_date_id<?php echo $season_price_list[$p]['price_id']; ?>" class="season_start_date form-controltwo required" name="season_end_date[]">
+						  <?php } else { ?>
+						    <input value="" type="text" data-required="true" class="season_start_date form-controltwo required" name="season_end_date[]">
+						  <?php } ?>
+						</div>
+			
+			<div class="col-sm-3">
+			    <?php //pr($season_price_list); ?>
+						   <label for="reg_input_name" class="req"> Is Default Season ?</label>
+						   <input type="hidden" name="is_default_hidden[]" id="is_default_hidden_<?php echo $season_price_list[$p]['price_id']; ?>" class="is_default_hidden_class" value="<?php if($season_price_list[$p]['isDefault'] == 'Yes' ) { echo 'Yes'; }else{echo 'No';}?>">
+						  <input <?php if($season_price_list[$p]['isDefault'] == 'Yes' ) { echo 'checked="checked"';} ?> value="<?php echo $p;?>" onclick="setDefault(<?php echo $season_price_list[$p]['price_id']; ?>);" class="form-controltwo seasonDefault" id="isdefault_<?php echo $season_price_list[$p]['price_id']; ?>" name="isDefault[]" type="radio" id="sesdefault_<?php echo $p; ?>">
+						</div>
+					    </td>
+					   
+					</tr>
+					<?php }
+					}else { $p = 2; ?>
+					    <tr><td>&nbsp;</td></tr>
+					    <tr id="season_0">
+					    <td>
+						<div class="col-sm-12"><legend><b>Season 1</b> <a href="javascript:void(0);" onclick="removeSeason(0);" style=" float: right;">Remove Season</a></legend></div>
+						<div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Season Name</label>
+						  <input value="" name="season_name[]" type="text" class="form-controltwo required seasonName" data-required="true"  id="sesname_0">
+						</div>
+						<div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Daily Price</label>
+						  <input value="" name="season_daily[]" type="text" class="form-controltwo required" data-required="true" data-type="number">
+						</div>
+						<div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Weekly Price</label>
+						  <input value="" name="season_weekly[]" type="text" class="form-controltwo required" data-required="true" data-type="number">
+						</div>
+						<div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Monthly Price</label>
+						  <input value="" name="season_monthly[]" type="text" class="form-controltwo required" data-required="true" data-type="number">
+						</div>
+						<br class="spacer" />
+						<div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Minimum Rental Days</label>
+						  <input value="" name="minimum_rental_days[]" type="text" class="form-controltwo required" data-required="true" data-type="number">
+						</div>
+                        <div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Season Start Date</label>
+						  <input value="" type="text" data-required="true" class="season_start_date form-controltwo required" name="season_start_date[]">
+						</div>
+                        <div class="col-sm-3">
+						  <label for="reg_input_name" class="req">Season End Date</label>
+						  <input value="" type="text" data-required="true" class="season_start_date form-controltwo required" name="season_end_date[]">
+						</div>
+			<div class="col-sm-3">
+						  <label for="reg_input_name" class="req"> Is Default Season ?</label>
+						   <input type="hidden" name="is_default_hidden[]" id="is_default_hidden_0" class="is_default_hidden_class" value="Yes">
+						  <input value="Yes" name="isDefault[]" checked onclick="setDefault('0');"  type="radio"   class="form-controltwo required seasonDefault" id="sesdefault_0">
+						</div>
+					    </td>
+					</tr>
+					
+					<?php } ?>
+				    </table>
+				    <input type="hidden" name="total_season_count" id="total_season_count" value="<?php echo count($season_price_list);?>" />
+				
+				
+				<div class="save_div_class">
+				    <button class="btn btn-default frm_step_next" type="submit"  id="btn_property_sales_fieldset">Save & Continue</button>
+				     <a class="btn btn-default frm_step_next  no-cache-redirect" href="<?php echo BACKEND_URL;?>rentals/edit_property/<?php echo $property_id.'/'.$page;?>/">< Back</a>
+				</div>
+			    <!--</div>
+				</fieldset>-->
+							    
+			  
+			    	
+                	    </div>
+			  </form>
+			    <input type="hidden" name="frm_cnt" id="frm_cnt" value="1" />
+			    <input type="hidden" id="backend_url" value="<?php echo BACKEND_URL;?>"  />
+			    <input type="hidden" id="frontend_url" value="<?php echo FRONTEND_URL;?>"  />
+			    
+				<div style="float:right;margin-top:-150px;display:none;" id="div_loader">
+				    <img src="<?php echo BACKEND_IMAGE_PATH;?>loaderText.gif" alt="Loading...Please wait" width="400px">
+				</div>
+				
+                            </div>
+                        </div>	
+            		</div>
+		    
+		    </div>
+            </div>
+        </div>
+    <!--End : Main content-->    
+</div>
+
+<script>
+var j	=	<?php echo $p; ?>;
+
+
+
+function addMoreSeasons(){    
+    $( "#tableSeasons" ).append( $( '<tr><td>&nbsp;</td></tr><tr id="season_'+ j +'"><td><div class="col-sm-12"><legend><b>Season '+ j +'</b><a href="javascript:void(0);" onclick="removeSeason('+ j +');" style=" float: right;">Remove Season</a></legend></div><br class="spacer" /><div class="col-sm-3"><label for="reg_input_name" class="req">Season Name</label><input name="season_name[]" type="text" id="sesname_'+j+'" class="form-controltwo required seasonName" data-required="true"></div><div class="col-sm-3"><label for="reg_input_name" class="req">Daily Price</label><input id="daily_price_'+j+'" name="season_daily[]" type="text" class="form-controltwo required number" data-required="true" data-type="number"></div><div class="col-sm-3"><label for="reg_input_name" class="req">Weekly Price</label><input id="weekly_price_'+j+'" name="season_weekly[]" type="text" class="form-controltwo required number" data-required="true" data-type="number"></div><div class="col-sm-3"><label for="reg_input_name" class="req">Monthly Price</label><input id="monthly_price_'+j+'" name="season_monthly[]" type="text" class="form-controltwo required number" data-required="true" data-type="number"></div><div class="col-sm-3"><label for="reg_input_name" class="req">Season Start Date</label><input name="season_start_date[]" id="start_date_'+j+'" type="text" class="season_start_date form-controltwo required" data-required="true"></div><div class="col-sm-3"><label for="reg_input_name" class="req">Season End Date</label><input name="season_end_date[]" id="end_date_'+j+'" type="text" class="season_end_date form-controltwo required" data-required="true"></div><div class="col-sm-3"><label for="reg_input_name" class="req">Minimum Rental Days</label><input id="minrental_'+j+'" name="minimum_rental_days[]" type="text" class="form-controltwo required number" data-required="true" data-type="number"></div><div class="col-sm-3"><label for="reg_input_name" class="req"> Is Default Season ?</label>  <input type="hidden" name="is_default_hidden[]" id="is_default_hidden_'+ j +'" class="is_default_hidden_class" value="No"><input  name="isDefault[]" value="'+j+'" type="radio" class="form-controltwo seasonDefault" onclick="setDefault('+j+');" id="sesdefault_'+j+'"></div></td></tr>' ) );
+   
+    $('.parsley_reg').parsley('addItem', '#minrental_'+j); //minrental_ //daily_price_ //weekly_price //monthly_price_ _
+    $('#minrental_'+j).parsley('addConstraint', {
+	required: true 
+	
+    });
+    
+    $('.parsley_reg').parsley('addItem', '#daily_price_'+j); //minrental_ //daily_price_ //weekly_price //monthly_price_ _
+   $('#daily_price_'+j).parsley('addConstraint', {
+	required: true 
+	
+    });
+    
+    $('.parsley_reg').parsley('addItem', '#weekly_price_'+j); //minrental_ //daily_price_ //weekly_price //monthly_price_ _
+    $('#weekly_price_'+j).parsley('addConstraint', {
+	required: true 
+	
+    });
+    
+    $('.parsley_reg').parsley('addItem', '#monthly_price_'+j); //minrental_ //daily_price_ //weekly_price //monthly_price_ _
+    $('#monthly_price_'+j).parsley('addConstraint', {
+	required: true 
+	
+    });
+    
+    $('.parsley_reg').parsley('addItem', '#start_date_'+j); //minrental_ //daily_price_ //weekly_price //monthly_price_ _
+    $('#start_date_'+j).parsley('addConstraint', {
+	required: true 
+	
+    });
+    
+    $('.parsley_reg').parsley('addItem', '#end_date_'+j); //minrental_ //daily_price_ //weekly_price //monthly_price_ _
+    $('#end_date_'+j).parsley('addConstraint', {
+	required: true 
+	
+    });
+    
+    $(".season_start_date,.season_end_date").datepicker({
+	    changeMonth: true,
+	    changeYear: true,
+	    dateFormat: 'dd/mm/yy'
+	});    
+    $("#total_season_count").val(j);
+    j++;
+}
+
+function setTheDefault(){    
+   // for(var i = 0; i< j; i++){
+	//$("#sesdefault_"+i).val($("#sesname_"+i).val());
+   // }
+}
+
+$(document).ready(function() {
+
+    $(".season_start_date,.season_end_date").datepicker({
+	    changeMonth: true,
+	    changeYear: true,
+	    dateFormat: 'dd/mm/yy'
+    });
+    
+});
+
+$("#btn_property_sales_fieldset").on("click",function(){
+    
+});
+
+function removeSeason(id){
+    if($("#is_default_hidden_"+id).val()=="Yes")
+    {
+	alert("You can't delete default session");
+    }else{
+	j--;
+	if ($("#start_date_"+id).html() == '') {   
+	$('.parsley_reg').parsley('removeItem', '#minrental_'+id); 
+	$('.parsley_reg').parsley('removeItem', '#daily_price_'+id);
+	$('.parsley_reg').parsley('removeItem', '#weekly_price_'+id);
+	$('.parsley_reg').parsley('removeItem', '#monthly_price_'+id);
+	$('.parsley_reg').parsley('removeItem', '#start_date_'+id);
+	$('.parsley_reg').parsley('removeItem', '#end_date_'+id);
+	}
+
+	$('#season_' + id).remove();
+
+    }
+}
+function setDefault(id){
+     $(".is_default_hidden_class").val("No");
+     $("#is_default_hidden_"+id).val("Yes");
+}
+
+//$('#frm4').parsley({
+//    errors: {
+//        container: function ( elem ) {
+//            alert( $( elem ).parent());
+//        }
+//    }
+//});
+
+</script>

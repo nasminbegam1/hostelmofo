@@ -1,0 +1,15 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2016-02-23 23:37:56 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-02-23 23:38:17 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-02-23 23:38:52 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-02-23 23:38:53 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-02-23 23:39:01 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-02-23 23:39:01 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-02-23 23:39:01 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-02-23 23:39:26 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-02-23 23:39:26 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-02-23 23:39:40 --> Severity: Warning  --> Invalid argument supplied for foreach() /var/www/html/hostelworld/front-app/views/property/details.php 143
+ERROR - 2016-02-23 23:39:42 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-02-23 23:39:43 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-02-23 23:39:43 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93

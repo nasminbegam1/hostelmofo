@@ -1,0 +1,155 @@
+    <?php
+
+class Model_availability extends CI_Model{
+    
+    public function roomcount(){
+        $agent_id = $this->current_user['agent_id'];
+        $sql = "SELECT count( * ) as CNT FROM ".AGENT_ROOMTYPE." WHERE agent_id='".$agent_id."' GROUP BY agent_id";
+        $query = $this->db->query($sql);
+        if($query->num_rows()>0){
+            $rec = $query->row();
+            return $rec->CNT;
+        }
+        
+    }
+    
+    
+    public function availabilityDetails($property_id='',$agent_id='',$start_date='',$end_date='')
+    {
+        
+        /* PROPERTY AVAILABILTY */
+        
+        $record= $price = array();
+        $result = array();
+        $i = 0;
+        $j = 0;
+        for ( $i = $start_date; $i <= $end_date; $i = $i + 86400 ) {
+            $chkdate = date( 'Y-m-d', $i );
+
+            if($property_id!='' && $agent_id!=''){
+
+                $str ='SELECT  HAR.* FROM hw_agent_roomtype as HAR WHERE HAR.property_id = "'.$property_id.'" AND HAR.agent_id="'.$agent_id.'"
+                ORDER By HAR.type_name';
+                //echo $str ; exit;
+                $query = $this->db->query($str);
+                
+                if($query->num_rows()>0){
+                    $record=$query->result_array();
+                     if(isset($record) && is_array($record) && count($record)>0){
+                        foreach($record as $key=>$rec){
+                            $base_price =   $rec['base_price'];
+                            $room_type  =   $rec['id'];                                   
+                        
+                            $count_booking = "SELECT SUM(HBD.no_of_room) as no_of_room,SUM(HBD.no_of_person) as no_of_person FROM hw_payment_info as HPI
+                            INNER JOIN hw_booking_deatils as HBD ON HBD.payment_id = HPI.paymeny_id
+                            WHERE HPI.property_id = ".$property_id." AND HBD.room_type = ".$room_type." AND (
+                            '".$chkdate."' between HPI.check_in AND HPI.check_out) ";        
+                            $cnt_res        =   $this->db->query($count_booking);
+                            $total_no_booking_that_day     =   $cnt_res->result_array();                         
+                            
+                            
+                            $sql = "SELECT * FROM hw_availibility WHERE property_id = '".$property_id."' AND roomtype_id = '".$room_type."' AND DATE_FORMAT(date,'%Y-%m-%d') = '".$chkdate."'";
+                            //$price = array();
+                            $res = $this->db->query($sql);
+                            if($res->num_rows()>0){
+                                $result                  =   $res->result_array();
+                                $price3['price']         =   $result[0]['price'];
+                                //$price3['available']     =   $result[0]['available'];
+                                
+                                if($record[$key]['price_charge_type'] == 'per_person') // for Dorm
+                                {
+                                    //$price3['booked_count']  = ($record[$key]['size'] * $record[$key]['no_of_rooms']) - $total_no_booking_that_day[0]['no_of_person'];
+                                    if($result[0]['available'] > 0)
+                                    {
+                                        $price3['booked_count']  = $result[0]['available'];
+                                    }
+                                    else
+                                    {
+                                        $price3['booked_count']  = ($record[$key]['size'] * $record[$key]['no_of_rooms']) - $total_no_booking_that_day[0]['no_of_person'];
+                                    }
+                                }
+                                else // // for Private Rooms
+                                {
+                                    if($result[0]['available'] > 0)
+                                    {
+                                        $price3['booked_count']  = $result[0]['available'];
+                                    }
+                                    else
+                                    {
+                                        $price3['booked_count']  = ($record[$key]['no_of_rooms']) - $total_no_booking_that_day[0]['no_of_person'];
+                                    }
+                                    //$price3['booked_count']  =   $record[$key]['no_of_rooms'] - $total_no_booking_that_day[0]['no_of_room'];
+                                }
+                                //$price3['booked_count']  =   $record[$key]['size'] - $total_no_booking_that_day[0]['no_of_room'];
+                                $price[$j][]             =   $price3;
+                            }
+                            else{
+                                $price3['price']         =   $base_price;
+                                
+                                //exit;
+                                if($record[$key]['price_charge_type'] == 'per_person'){
+                                    $price3['booked_count']  = ($record[$key]['size'] * $record[$key]['no_of_rooms']) - $total_no_booking_that_day[0]['no_of_person'];
+                                    
+                                }else{
+                                    
+                                    $price3['booked_count']  =   $record[$key]['no_of_rooms'] - $total_no_booking_that_day[0]['no_of_room'];
+                                }
+                                
+                                //$price3['booked_count']  =   $record[$key]['size'] - $total_no_booking_that_day[0]['no_of_room'];
+                                $price[$j][]             =   $price3;   
+                            }
+                            
+                        }
+    
+                     }
+    
+                }
+                
+            }
+             $j++;
+
+        }
+        $result = array('record'=>$record,'price'=>$price);
+        //pr($result);
+        return $result;
+    }
+    
+    
+    public function insert_price($property_id,$roomTypeID,$newdate,$price,$avail){
+        
+        $sql = "SELECT * FROM hw_availibility WHERE property_id = '".$property_id."' AND roomtype_id = '".$roomTypeID."' AND DATE_FORMAT(date,'%Y-%m-%d') = '".$newdate."'";
+        
+        $res = $this->db->query($sql);
+        if($res->num_rows()>0){
+            $row                = $res->row();
+            $idArr              = array('availibility_id' => $row->availibility_id);
+            $updateArr          = array('price' => $price,'available'=>$avail);
+            $id = $this->model_basic->updateIntoTable(AVAILABILITY,$idArr,$updateArr);
+        }
+        else{
+            $insertArr          = array('property_id' => $property_id, 'roomtype_id' => $roomTypeID, 'date' => $newdate, 'price' => $price,'available'=>$avail);
+            $id = $this->model_basic->insertIntoTable(AVAILABILITY, $insertArr);
+        }
+        return $id;
+    }
+    
+    
+    function insert_booked_count($property_id,$roomTypeID,$newdate,$price,$booked_count){
+        $sql = "SELECT * FROM hw_availibility WHERE property_id = '".$property_id."' AND roomtype_id = '".$roomTypeID."' AND DATE_FORMAT(date,'%Y-%m-%d') = '".$newdate."'";
+        $res = $this->db->query($sql);
+        if($res->num_rows()>0){
+            $row                = $res->row();
+            $idArr              = array('availibility_id' => $row->availibility_id);
+            $updateArr          = array('available' => $booked_count,'price' => $price);
+            $id = $this->model_basic->updateIntoTable(AVAILABILITY,$idArr,$updateArr);
+        }
+        else{
+            $insertArr          = array('property_id' => $property_id, 'roomtype_id' => $roomTypeID, 'date' => $newdate,'price' => $price, 'available' => $booked_count);
+            $id = $this->model_basic->insertIntoTable(AVAILABILITY, $insertArr);
+        }
+        return $id;
+    }
+    
+    
+}
+?>

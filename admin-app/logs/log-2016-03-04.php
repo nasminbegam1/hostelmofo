@@ -1,0 +1,132 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2016-03-04 17:38:25 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-03-04 17:38:32 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-03-04 17:38:32 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-03-04 17:38:41 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:41 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:38:45 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-03-04 17:40:29 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-03-04 17:40:29 --> Severity: Warning  --> unlink(/var/www/html/hostelworld/upload/facility/): Is a directory /var/www/html/hostelworld/admin-app/controllers/property_facility.php 300
+ERROR - 2016-03-04 17:40:29 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:29 --> Severity: Notice  --> Undefined variable: j /var/www/html/hostelworld/admin-app/views/property_facility/list.php 156
+ERROR - 2016-03-04 17:40:33 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93
+ERROR - 2016-03-04 17:40:55 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/hostelworld/system/database/drivers/mysql/mysql_driver.php 93

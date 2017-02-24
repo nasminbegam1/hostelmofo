@@ -1,0 +1,172 @@
+ <!--BEGIN TITLE & BREADCRUMB PAGE-->
+<div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+    <div class="page-header pull-left">
+        <div class="page-title">Edit FAQ</div>
+    </div>
+    <ol class="breadcrumb page-breadcrumb pull-right">
+        <li><i class="fa fa-question"></i>&nbsp;&nbsp;<a href="javascript:void(0)">FAQ</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+        <li class="active"><i class="fa fa-question"></i>&nbsp;&nbsp;<a href="<?php echo $edit_url;?>" >Edit FAQ</a></li>
+        
+        <?php if(is_array($brdLink) and count($brdLink)>0){ ?>
+                <?php foreach($brdLink as $label=>$link){ ?>
+                    <li>
+                        <i class="fa fa-user"></i>&nbsp;&nbsp;
+                        <a href="<?php echo $link ?>"><?php echo $label ; ?></a>
+                        <?php if($label != end(array_keys($brdLink))){ ?>
+                        <i class="fa fa-angle-right"></i>
+                        <?php } ?>
+                    </li>
+                <?php } ?> 
+            <?php  } ?>
+        
+        
+    </ol>
+    <div class="clearfix"></div>
+</div>
+<!--END TITLE & BREADCRUMB PAGE-->
+<!--BEGIN CONTENT-->
+        <div class="page-content">
+        <div id="form-layouts" class="row">
+        <div class="col-lg-12">
+         <div style="background: transparent; border: 0; box-shadow: none !important;" class="pan mtl mbn responsive">
+                            <div id="tab-form-seperated" class="tab-pane">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        
+                                       
+                                        <?php if(validation_errors() != FALSE){?>
+                                        <div align="center">
+                                            <div class="nNote nFailure" style="width: 600px;color:red;">
+                                                <?php echo validation_errors('<p>', '</p>'); ?>
+                                            
+                                            </div>
+                                        </div>
+                                        <?php } ?>
+                                        
+                                        <div class="panel panel-yellow portlet box portlet-grey">
+                                            <!--<div class="panel-heading">Admin User Form</div>-->
+                                            <div class="portlet-header">
+                                                    <div class="caption">Edit FAQ</div>
+                                                    <div class="tools">
+                                                        <i class="fa fa-chevron-up"></i>
+                                                    </div>
+                                            </div>
+                                            <div class="portlet-body panel-body pan">
+                                                
+                                                <form method="post" action="" class="form-validate form-horizontal form-seperated " enctype="multipart/form-data" id="add_form">
+						<input type="hidden" name="action" value="Process">
+                                                    <div class="form-body">
+                                                        
+
+                                                        
+                                                        
+                                                        <div class="form-group"><label for="banner_title" class="col-md-3 control-label">FAQ Title <span class='require'>*</span></label>
+
+                                                            <div class="col-md-9">
+                                                                <input name="faq_title" type="text" placeholder="" class="form-control required" id="faq_title" value="<?php echo stripslashes($faq_master['faq_title']);  ?>"/>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        
+
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        <div class="form-group"><label for="banner_desc" class="col-md-3 control-label">Faq Description <span class='require'>*</span></label>
+
+                                                            <div class="col-md-9">
+                                                                
+                                                                    <textarea  name="faq_desc"   class="ckeditor form-control required"><?php echo stripslashes($faq_master['faq_desc']); ?></textarea>
+                                    
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        
+                                                        <div class="form-group"><label for="banner_status" class="col-md-3 control-label">FAQ Type<span class='require'>*</span></label>
+
+                                                            <div class="col-md-9">
+                                                                <select name="faq_type" class="form-control required">
+                                                                    <option value="">--Select Type--</option>
+                                                                        <option value="Rental" <?php if($faq_master['faq_type']=='Rental'){?>selected="selected" <?php } ?>>Rental</option>
+                                                                        <option value="Sales" <?php if($faq_master['faq_type']=='Sales'){?>selected="selected" <?php } ?>>Sales</option>
+                                                                        <option value="Buyer" <?php if($faq_master['faq_type']=='Buyer'){?>selected="selected" <?php } ?>>Buyer</option>
+                                                                        <option value="General" <?php if($faq_master['faq_type']=='General'){?>selected="selected" <?php } ?>>General</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="form-group"><label for="banner_order" class="col-md-3 control-label">FAQ Order<span class='require'>*</span></label>
+
+                                                            <div class="col-md-9">
+                                                                <!--<input type="number" min="" class="form-control required" name="faq_order" id="faq_order" value="">-->
+                                                                 <select class="form-control required" data-required="true" name="faq_order">
+                                                                 <?php
+                                                                foreach($faq_orders as $each_faq_order)
+                                                                {
+                                                                    if($each_faq_order['faq_order'] == $faq_master['faq_order'])
+                                                                    {
+                                                                   
+                                                                    ?>
+                                                                    <option value="<?php echo $each_faq_order['faq_order'];?>" selected="selected"><?php echo $each_faq_order['faq_order']; ?> </option>
+                                                                    
+                                                                     <?php
+                                                                    }
+                                                        
+                                                                    else
+                                                                    {
+                                                              ?>
+                                                            <option value="<?php echo $each_faq_order['faq_order'];?>" ><?php echo $each_faq_order['faq_order']; ?> </option>
+                                                        <?php
+                                                         }
+                                                        }
+                                            
+                                                        ?>
+                                                 
+                                                    </select>
+                                                            </div>
+                                                        </div>
+
+                                                        
+                                                    <div class="form-actions text-right pal">
+                                                        <button type="submit" class="btn btn-primary">Edit FAQ</button>
+                                                        &nbsp;
+                                                        <button type="button" class="btn btn-green" onclick="location.href='<?php echo $return_link; ?>'">Return</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+         </div>
+        </div>
+        </div>
+        </div>
+        
+        
+<script>
+    $(document).ready(function(){
+	$('#meta_title').keydown(function(){
+	    var value = $(this).val();
+	    var len = parseInt(value.length); 
+	    $('#countexact').text(len);
+	    if(len>68){
+		$(this).val(value.substring(0,69));
+	    }
+	});
+	
+	$('#meta_description').keydown(function(){
+	    var value = $(this).val();
+	    var len = parseInt(value.length); 
+	    $('#countexact1').text(len);
+	    if(len>154){
+		$(this).val(value.substring(0,155));
+	    }
+	});
+    });
+</script>
+<!--END CONTENT-->
+<!--BEGIN CONTENT QUICK SIDEBAR-->
+
+<!--END CONTENT QUICK SIDEBAR-->

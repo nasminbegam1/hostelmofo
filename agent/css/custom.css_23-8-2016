@@ -1,0 +1,128 @@
+/* here you can put your own css to customize and override the theme */
+
+/***
+Rounded Portlets
+***/
+/*
+.portlet {
+	border-radius: 4px !important;
+}
+
+.portlet .portlet-title {
+	border-radius: 4px 4px 0px 0px !important;
+}
+
+.portlet .portlet-body,
+.portlet .portlet-body .form-actions  {
+	border-radius: 0px 0px 4px 4px !important;
+}
+*/
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.clear{ clear:both; display: block; content: "";}
+
+#avl-dtls th, #avl-dtls td {
+    padding: 4px 5px;
+    font-size: 9px;
+    text-align: center;
+   
+}
+#avl-dtls th{ font-size: 12px;}
+#avl-dtls{ width: 100%;}
+#avl-dtls td{ background: #eeedef;}
+#avl-dtls th.pg{background: #eeedef;}
+#avl-dtls input{ width: 100%;}
+
+#avl-dtls th{ text-transform: capitalize; color: #fff;}
+#avl-dtls td.pg{ position: relative; padding-right: 25px;}
+/*.table-condensed td.pg:after{ position: absolute; background: url("images/.png") no-repeat 0 0; width: ; height: ;
+left: 0; top: 0;}*/
+#avl-dtls table.inside td{ padding: 0;}
+#avl-dtls table.inside td .pstn{ position: relative;}
+#avl-dtls table.inside td .pstn:before{
+    position: absolute; background: url("../img/ic1.png") no-repeat 0 0; width:20px ; height: 20px;
+left: -30px; top: 0; content: "";
+}
+#avl-dtls table.inside td .pstn1{position: relative;}
+#avl-dtls table.inside td .pstn1:before{
+     position: absolute; background: url("../img/ic2.png") no-repeat 0 0; width:20px ; height: 20px;
+left:-30px; top: 0; content: "";
+}
+#avl-dtls thead th{ background: #82a8d7;}
+
+.content{ padding: 0 5px;}
+.content .rates{  background: #cbdbf9; overflow: hidden; padding: 10px 0;
+}
+.rates .rating{ float: left; width: 25%;  text-transform: capitalize;}
+.inside span input{ background: #f00;}
+
+
+@media only screen and (max-width: 800px) {
+    .rates .rating{ font-size: 14px;}
+	.inside  input{ width: 100%;}
+	/* Force table to not be like tables anymore */
+	#avl-dtls table, 
+	#avl-dtls thead, 
+	#avl-dtls tbody, 
+	#avl-dtls th, 
+	#avl-dtls td, 
+	#avl-dtls tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	#avl-dtls thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#avl-dtls tr { border: 1px solid #ccc; }
+ 
+	#avl-dtls td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	#avl-dtls td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: normal;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	/*
+	Label the data
+	*/
+	#avl-dtls td:before { content: attr(data-title); }
+}
+.form-body .form-group .frm-btn{ padding: 15px;}
+
+td.numeric:nth-child(2)> div{position: relative;}
+td.numeric:nth-child(2)> div:before{  position: absolute; background: url("../img/price1.png") no-repeat 0 0; width:20px ; height: 20px;
+left: -18px; top:2px; content: "";}
+td.numeric:nth-child(2)> div:after{  position: absolute; background: url("../img/bed1.png") no-repeat 0 0; width:20px ; height: 20px;
+left:-18px;bottom:-4px; content: "";}
+
+@media (max-width: 767px){
+    td.numeric:nth-child(n)> div{position: relative;}
+    td.numeric:nth-child(n)> div:before{  position: absolute; background: url("../img/price1.png") no-repeat 0 0; width:20px ; height: 20px;
+left: -18px; top:2px; content: "";}
+td.numeric:nth-child(n)> div:after{  position: absolute; background: url("../img/bed1.png") no-repeat 0 0; width:20px ; height: 20px;
+left:-18px;bottom:-4px; content: "";}
+}
